@@ -19,7 +19,7 @@ const traverseFileSystem = function (currentPath) {
       //iterate through array of file ids to be copied
       for (let i in searchIds) {
         //if current file meets the search criteria, copy it, and give confirmation
-        if (currentFilePath.includes('my-new-file') && currentFilePath.includes('.txt') && currentFilePath.includes(searchIds[i])) {
+        if (currentFilePath.includes('.vtt') && currentFilePath.includes(searchIds[i])) {
           fs.copyFileSync(currentFilePath, `../file-mover-destination/${currentFile}`);
           counter += 1;
           console.log('Copied: ', currentFile);
