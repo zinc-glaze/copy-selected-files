@@ -1,5 +1,6 @@
 const fs = require('fs');
 
+//load file Ids into array
 let searchIds = fs.readFileSync(`${__dirname}/fileIds.txt`, 'utf8').trim().split(',');
 let counter = 0;
 
@@ -30,5 +31,9 @@ const traverseFileSystem = function (currentPath) {
   }
 };
 
+//create destination directory for copied files
+fs.mkdirSync('../file-mover-destination');
+//run search and copy function
 traverseFileSystem(__dirname);
+//print results
 console.log(`${counter} files copied`);
